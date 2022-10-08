@@ -1,12 +1,15 @@
-import React from 'react'
-import '../itemListContainer/ItemListContainer.css'
+import { VerticalAlignBottomOutlined } from "@mui/icons-material";
+import React, { useState } from "react";
+import "../itemListContainer/ItemListContainer.css";
 
-const ItemListContainer = ( {greeting} ) => {
+const ItemListContainer = ({ greeting, children }) => {
+  
   return (
-    <div>
-    <h2> {greeting} </h2>
+    <div className="card">
+      <h1>{greeting}</h1>
+      {children}
     </div>
-      )
-}
+  );
+};
 
-export default ItemListContainer
+export default ItemListContainer;
