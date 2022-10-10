@@ -2,11 +2,7 @@ h2 {
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 
-.card {
+.itemListContainer {
     display: flex;
     flex-direction: column;
-    height: 300px;
-    width: 300px;
-    background-color: whitesmoke;
 }
-

@@ -9,16 +9,11 @@ const App = () => {
   const nombre = "Jose"
   const apellido = "Padilla"
   const mensaje = "Bienvendio a la tienda"
-  const onAdd = () => {
-    console.log("Agregaste algo al carrito");
-  }
-
+ 
   return (
     <>
   <Navbar nombreUsuario={nombre} apellidoUsuario={apellido} />
-  <ItemListContainer greeting={mensaje} >
-  <ItemCount stock={5} initial={1} onAdd={onAdd} />
-  </ItemListContainer>
+  <ItemListContainer greeting={mensaje} />
     </>
   )
 }

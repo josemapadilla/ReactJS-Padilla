@@ -1,8 +1,12 @@
+.ItemCount{
+    display: flex;
+    flex-direction: column;
+    max-height: 25px;
+}
+
 .botones {
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
-    padding: 3px;
-    background-color: whitesmoke;
 }
