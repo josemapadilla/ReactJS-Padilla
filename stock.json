@@ -1,0 +1,38 @@
+[
+  {
+    "nombre": "lapicera",
+    "id": 0,
+    "categoria": "utiles",
+    "stock": 5,
+    "descr": "Lapicera azul de gran calidad",
+    "precio": 4500,
+    "img": "./src/img/lapicera.png"
+  },
+  {
+    "nombre": "lapices",
+    "id": 1,
+    "categoria": "utiles",
+    "stock": 3,
+    "descr": "Estuche con lapices de colores varios",
+    "precio": 12500,
+    "img": "./src/img/lapices.png"
+  },
+  {
+    "nombre": "llavero",
+    "id": 2,
+    "categoria": "accesorio",
+    "stock": 8,
+    "descr": "Llavero modulor le-corbusier",
+    "precio": 2500,
+    "img": "./src/img/modulor.png"
+  },
+  {
+    "nombre": "taza",
+    "id": 3,
+    "categoria": "accesorio",
+    "stock": 10,
+    "descr": "Taza con leyenda, futuro arquitecto",
+    "precio": 2000,
+    "img": "./src/img/taza.png"
+  }
+]
