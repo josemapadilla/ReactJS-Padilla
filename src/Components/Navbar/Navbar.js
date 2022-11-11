@@ -8,10 +8,9 @@ import { Link, NavLink } from "react-router-dom"
 const Navbar = ( { nombreUsuario } ) => {
 
     const categorias = [
-        { nombre: "electronics", id: 0, ruta: "/categoria/electronics" },
-        { nombre: "jewelery", id: 1, ruta: "/categoria/jewelery" },
-        { nombre: "men's clothing", id: 2, ruta: "/categoria/men's clothing" },
-        { nombre: "women's clothing", id: 3, ruta: "/categoria/women's clothing" },
+        { nombre: "dibujo", id: 0, ruta: "/categoria/dibujo" },
+        { nombre: "accesorios", id: 1, ruta: "/categoria/accesorios" },
+        { nombre: "posters", id: 2, ruta: "/categoria/posters" },
       ];
 
     return (

@@ -1,6 +1,9 @@
 import React, { useEffect, useState } from "react";
 import ItemDetail from "../ItemDetail/ItemDetail";
 import { useParams } from "react-router-dom";
+import {getDoc, collection, doc} from "firebase/firestore";
+import {db} from "../../firebase/firebase";
+
 
 export const ItemDetailContainer = () => {
   const [producto, setProducto] = useState({});
@@ -8,15 +11,21 @@ export const ItemDetailContainer = () => {
 
   const { id } = useParams();
 
-  const URL_BASE = 'https://fakestoreapi.com/products'
-  const URL_PROD = `${URL_BASE}/${id}`
-
   useEffect(() => {
-    fetch(id == undefined?URL_BASE : URL_PROD)
-        .then((respuesta) => respuesta.json())
-        .then ((data) => setProducto(data))   
-      .catch (() => {console.log("error")})
-      .finally(setLoading(false))
+    const productCollection = collection(db, "productos");
+    const refDoc = doc(productCollection, id);
+
+    getDoc(refDoc)
+      .then((result) => {
+        setProducto({
+          id: result.id,
+          ...result.data(),
+        });
+      })
+      .catch((error) => {
+        console.log(error);
+      })
+      .finally(setLoading(false));
     }, [id])
 
   return (

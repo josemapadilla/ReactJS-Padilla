@@ -1,27 +1,65 @@
-import React, { useEffect } from 'react'
-import '../Item/Item.css'
-import ItemCount from '../ItemCount/ItemCount'
-import { Link, NavLink } from "react-router-dom"
-import { ItemDetailContainer } from '../ItemDetailContainer/ItemDetailContainer'
-import { useParams } from "react-router-dom";
+import React from "react";
+import Card from "@mui/material/Card";
+import {
+  CardContent,
+  CardMedia,
+  Typography,
+  Button,
+  CardActionArea,
+  CardActions,
+} from "@mui/material";
+import { Link } from "react-router-dom";
 
-
-const Item = ({producto}) => {
-
-    const onAdd = () => {
-        console.log("Agregaste algo al carrito");
-      }
-    
+const Item = ({ producto }) => {
   return (
-    <div className="card">
-        <h2>{producto.title}</h2>
-        <img src={ producto.image}></img>
-        <strong>{producto.price}</strong>
-        <NavLink to={`/producto/${producto.id}`}>Ver mas</NavLink>
-        <ItemCount stock={producto.stock} initial={1} onAdd={onAdd} />
-        
-    </div>
-  )
-}
+    <Card sx={{ maxWidth: 345 }} style={styles.container}>
+      <CardActionArea>
+        <CardMedia
+          component="img"
+          height="140"
+          image={producto.image}
+          alt={producto.title}
+        />
+        <CardContent>
+          <Typography
+            gutterBottom
+            variant="h5"
+            component="div"
+            style={styles.title}
+          >
+            {producto.title}
+          </Typography>
+          <Typography variant="body2" color="text.secondary">
+            ${producto.price}
+          </Typography>
+        </CardContent>
+      </CardActionArea>
+      <CardActions>
+        <Link to={"/producto/" + producto.id}>
+          <Button size="small" color="primary">
+            Ver Detalles
+          </Button>
+        </Link>
+      </CardActions>
+    </Card>
+  );
+};
 
-export default Item
+const styles = {
+  container: {
+    width: window.innerHeight > 900 ? "25%" : "90%",
+    flexDirection: "column",
+    justifyContent: "center",
+    alignItems: "center",
+    margin: 20,
+    backgroundColor: "rgba(249, 220, 92, 0.3)",
+  },
+  title: {
+    textOverflow: "ellipsis",
+    overflow: "hidden",
+    height: 100,
+  },
+};
+
+export default Item;
+
